@@ -40,6 +40,12 @@ return {
   { 'tpope/vim-surround' },
   { 'tpope/vim-commentary' },
   {
+    'tpope/vim-fugitive',
+    keys = {
+      { '<leader>tg', '<cmd>Git<CR>', desc = '[T]oggle [G]it' },
+    },
+  },
+  {
     'pmizio/typescript-tools.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
     opts = {},
