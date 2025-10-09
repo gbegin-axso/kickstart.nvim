@@ -13,9 +13,9 @@ return {
     opts = {
       filesystem = {
         open_on_setup = true,
-      },
-      window = {
-        position = 'left',
+        window = {
+          position = 'left',
+        },
       },
     },
     lazy = false,
