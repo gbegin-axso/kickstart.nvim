@@ -23,6 +23,8 @@ vim.opt.isfname:append '@-@'
 
 vim.opt.updatetime = 50
 
+vim.o.clipboard = ''
+
 vim.opt.colorcolumn = '80'
 
 require 'custom.plugins.onedark'
