@@ -14,6 +14,7 @@ return {
       filesystem = {
         open_on_setup = true,
       },
+      position = 'left',
     },
     lazy = false,
   },

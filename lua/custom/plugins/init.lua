@@ -33,5 +33,6 @@ require 'custom.plugins.lsp'
 require 'custom.plugins.autosession'
 require 'custom.plugins.undotree'
 require 'custom.plugins.autosave'
+require 'custom.plugins.diffview'
 
 return {}
