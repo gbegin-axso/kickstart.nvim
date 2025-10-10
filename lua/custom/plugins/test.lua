@@ -31,7 +31,9 @@ return {
           },
         },
         status = { virtual_text = true },
-        output = { open_on_run = true },
+        output = {
+          open_on_run = true,
+        },
       }
     end,
     keys = {
@@ -73,10 +75,7 @@ return {
       {
         '<leader>xo',
         function()
-          require('neotest').output.open {
-            enter = true,
-            auto_close = true,
-          }
+          require('neotest').output.open { enter = true }
         end,
         desc = 'Show Output',
       },
@@ -88,7 +87,7 @@ return {
         desc = 'Toggle Output Panel',
       },
       {
-        'leader>xS',
+        '<leader>xS',
         function()
           require('neotest').run.stop()
         end,
