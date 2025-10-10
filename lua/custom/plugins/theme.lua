@@ -17,7 +17,7 @@ return {
     priority = 1000, -- ensures it loads early
     config = function()
       require('catppuccin').setup {
-        flavour = 'latte', -- choose latte flavor
+        flavour = 'frappe', -- choose latte flavor
         background = {
           light = 'latte',
           dark = 'mocha', -- fallback dark theme
@@ -31,6 +31,7 @@ return {
     end,
   },
   {
+    enabled = false,
     'loctvl842/monokai-pro.nvim',
     priority = 1000, -- load early
     config = function()
