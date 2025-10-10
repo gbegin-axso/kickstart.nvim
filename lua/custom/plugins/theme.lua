@@ -1,6 +1,7 @@
+-- Toggle between light and dark Catppuccin themes
 local current_flavour = 'mocha'
 
-function ToggleCatppuccin()
+local function toggle_catppuccin()
   if current_flavour == 'mocha' then
     current_flavour = 'latte'
   else
@@ -10,8 +11,8 @@ function ToggleCatppuccin()
   vim.cmd.colorscheme 'catppuccin'
 end
 
--- Map toggle to a key, e.g. <leader>tc
-vim.api.nvim_set_keymap('n', '<leader>tc', ':lua ToggleCatppuccin()<CR>', { noremap = true, silent = true })
+-- Map toggle to a key
+vim.keymap.set('n', '<leader>tc', toggle_catppuccin, { desc = '[T]oggle [C]atppuccin theme', noremap = true, silent = true })
 
 return {
   {
@@ -26,7 +27,7 @@ return {
     end,
   },
   {
-    enabled = false,
+    enabled = true,
     'catppuccin/nvim',
     name = 'catppuccin',
     priority = 1000, -- ensures it loads early
