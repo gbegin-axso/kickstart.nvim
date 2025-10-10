@@ -27,7 +27,7 @@ vim.o.clipboard = ''
 
 vim.opt.colorcolumn = '80'
 
-require 'custom.plugins.onedark'
+require 'custom.plugins.theme'
 require 'custom.plugins.neotree'
 require 'custom.plugins.copilot'
 require 'custom.plugins.tpope'
@@ -36,6 +36,7 @@ require 'custom.plugins.autosession'
 require 'custom.plugins.undotree'
 require 'custom.plugins.autosave'
 require 'custom.plugins.diffview'
+require 'custom.plugins.test'
 
 -- add custom keys to vim
 
