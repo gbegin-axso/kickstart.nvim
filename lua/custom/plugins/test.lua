@@ -169,7 +169,7 @@ return {
     config = function()
       local dap = require 'dap'
 
-      dap.defaults.fallback.pythonPath = require('raven.utils').venv_python_path()
+      -- dap.defaults.fallback.pythonPath = require('raven.utils').venv_python_path()
 
       local mason_path = vim.fn.stdpath 'data' .. '/mason'
 
