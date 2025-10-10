@@ -1,3 +1,18 @@
+local current_flavour = 'mocha'
+
+function ToggleCatppuccin()
+  if current_flavour == 'mocha' then
+    current_flavour = 'latte'
+  else
+    current_flavour = 'mocha'
+  end
+  require('catppuccin').setup { flavour = current_flavour }
+  vim.cmd.colorscheme 'catppuccin'
+end
+
+-- Map toggle to a key, e.g. <leader>tc
+vim.api.nvim_set_keymap('n', '<leader>tc', ':lua ToggleCatppuccin()<CR>', { noremap = true, silent = true })
+
 return {
   {
     enabled = false,
@@ -17,7 +32,7 @@ return {
     priority = 1000, -- ensures it loads early
     config = function()
       require('catppuccin').setup {
-        flavour = 'frappe', -- choose latte flavor
+        flavour = 'mocha',
         background = {
           light = 'latte',
           dark = 'mocha', -- fallback dark theme
