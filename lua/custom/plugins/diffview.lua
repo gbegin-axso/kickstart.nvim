@@ -1,6 +1,6 @@
 -- Place this in your Neovim config
 local function getMainBrach()
-  local root_dir = require('raven.utils').get_root()
+  local root_dir = vim.fn.getcwd()
   -- Use % for special characters ^$()%.[]*+-?) ex: https://www.lua.org/manual/5.1/manual.html#pdf-string.format
   if string.find(root_dir, 'projet-old') then
     return 'master'
@@ -9,7 +9,7 @@ local function getMainBrach()
 end
 
 local function getDevBrach()
-  local root_dir = require('raven.utils').get_root()
+  local root_dir = vim.fn.getcwd()
   -- Use % for special characters ^$()%.[]*+-?) ex: https://www.lua.org/manual/5.1/manual.html#pdf-string.format
   if string.find(root_dir, 'projet-old') then
     return 'dev'
