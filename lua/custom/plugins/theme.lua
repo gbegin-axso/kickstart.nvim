@@ -13,6 +13,9 @@ end
 
 -- Map toggle to a key
 vim.keymap.set('n', '<leader>tc', toggle_catppuccin, { desc = '[T]oggle [C]atppuccin theme', noremap = true, silent = true })
+vim.keymap.set('n', '<space><del>', ':bd<CR>', { desc = '[D]elete [C]urrent buffer', noremap = true, silent = true })
+vim.keymap.set('n', '<D-LeftMouse>', vim.lsp.buf.definition, { desc = 'Go to [D]efinition with Cmd+LeftClick', noremap = true, silent = true })
+vim.keymap.set('n', '<D-RightMouse>', vim.lsp.buf.implementation, { desc = 'Go to [I]mplementation with Right Click', noremap = true, silent = true })
 
 return {
   {
