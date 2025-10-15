@@ -56,4 +56,9 @@ vim.keymap.set('n', 'tc', ':tabc<CR>', { desc = 'Close current tab' })
 vim.keymap.set('n', '<leader>j', ':cnext<CR>', { desc = 'Next diagnostic', silent = true })
 vim.keymap.set('n', '<leader>k', ':cprevious<CR>', { desc = 'Previous diagnostic', silent = true })
 
+-- Map toggle to a key
+vim.keymap.set('n', '<space><del>', ':bd<CR>', { desc = '[D]elete [C]urrent buffer', noremap = true, silent = true })
+vim.keymap.set('n', '<C-LeftMouse>', vim.lsp.buf.definition, { desc = 'Go to [D]efinition with Cmd+LeftClick', noremap = true, silent = true })
+vim.keymap.set('n', '<C-RightMouse>', vim.lsp.buf.implementation, { desc = 'Go to [I]mplementation with Right Click', noremap = true, silent = true })
+
 return {}
