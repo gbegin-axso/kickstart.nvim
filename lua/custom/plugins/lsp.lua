@@ -1,10 +1,5 @@
 return {
   {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    opts = {},
-  },
-  {
     'ray-x/go.nvim',
     dependencies = { -- optional packages
       'ray-x/guihua.lua',
