@@ -37,6 +37,7 @@ require 'custom.plugins.undotree'
 require 'custom.plugins.autosave'
 require 'custom.plugins.diffview'
 require 'custom.plugins.test'
+require 'custom.plugins.nvim-treesitter'
 
 -- add custom keys to vim
 
