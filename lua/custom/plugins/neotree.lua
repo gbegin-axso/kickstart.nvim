@@ -21,17 +21,6 @@ return {
           position = 'right',
         },
       },
-
-      -- Default components configuration, including icons
-      default_component_configs = {
-        indent = { padding = 0, strict = true },
-        icon = {
-          folder_closed = '',
-          folder_open = '',
-          folder_empty = '󰜌',
-          default = '',
-        },
-      },
     },
   },
 }
