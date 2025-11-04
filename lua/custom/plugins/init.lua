@@ -31,7 +31,6 @@ vim.o.clipboard = ''
 vim.opt.colorcolumn = '80'
 
 require 'custom.plugins.theme'
-require 'custom.plugins.neotree'
 require 'custom.plugins.copilot'
 require 'custom.plugins.tpope'
 require 'custom.plugins.lsp'
