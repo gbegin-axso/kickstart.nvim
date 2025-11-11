@@ -168,8 +168,6 @@ return {
     config = function()
       local dap = require 'dap'
 
-      -- dap.defaults.fallback.pythonPath = require('raven.utils').venv_python_path()
-
       local mason_path = vim.fn.stdpath 'data' .. '/mason'
 
       dap.adapters.lldb = {
@@ -189,6 +187,7 @@ return {
           },
         }
       end
+
       if not dap.adapters['node'] then
         dap.adapters['node'] = function(cb, config)
           if config.type == 'node' then
@@ -219,61 +218,40 @@ return {
           runtimeArgs = { 'tsx', '--env-file=.env', 'src/main.ts' },
           console = 'integratedTerminal',
         },
-        {
-          name = 'Debug (watch start:dev)',
-          type = 'pwa-node',
-          request = 'launch',
-          cwd = '${workspaceFolder}',
-          runtimeExecutable = 'npx',
-          runtimeArgs = { 'tsx', 'watch', '--env-file=.env', 'src/main.ts' },
-          console = 'integratedTerminal',
-        },
-        {
-          name = 'Debug (nest)',
-          type = 'pwa-node',
-          request = 'launch',
-          cwd = '${workspaceFolder}',
-          runtimeExecutable = 'npx',
-          runtimeArgs = { 'nest', 'start' },
-          console = 'integratedTerminal',
-        },
-        {
-          name = 'Debug (watch nest)',
-          type = 'pwa-node',
-          request = 'launch',
-          cwd = '${workspaceFolder}',
-          runtimeExecutable = 'npx',
-          runtimeArgs = { 'nest', 'start', '--watch' },
-          console = 'integratedTerminal',
-        },
-        {
-          type = 'pwa-node',
-          request = 'launch',
-          name = 'Launch file',
-          program = '${file}',
-          cwd = '${workspaceFolder}',
-          console = 'integratedTerminal',
-        },
-        {
-          type = 'pwa-node',
-          request = 'attach',
-          name = 'Attach',
-          processId = require('dap.utils').pick_process,
-          cwd = '${workspaceFolder}',
-          console = 'integratedTerminal',
-        },
-        {
-          name = 'Debug Tests (current file)',
-          type = 'pwa-node',
-          request = 'launch',
-          cwd = '${workspaceFolder}',
-          runtimeExecutable = 'npx',
-          runtimeArgs = { 'jest', '${file}', '--runInBand', '--no-cache', '--watchAll=false' },
-          console = 'integratedTerminal',
-        },
+        -- ... other TS configs ...
       }
 
       dap.configurations.javascript = dap.configurations.typescript
+
+      -- Add Go debug adapter configuration for Delve
+      dap.adapters.go = {
+        type = 'server',
+        host = '127.0.0.1',
+        port = 38697, -- default Delve port or your configured port
+      }
+
+      -- Add Go debug configurations
+      dap.configurations.go = {
+        {
+          type = 'go',
+          name = 'Debug',
+          request = 'launch',
+          program = '${workspaceFolder}/server/server.go',
+        },
+        {
+          type = 'go',
+          name = 'Debug Package',
+          request = 'launch',
+          program = '${workspaceFolder}/server',
+        },
+        {
+          type = 'go',
+          name = 'Attach',
+          mode = 'local',
+          request = 'attach',
+          processId = require('dap.utils').pick_process,
+        },
+      }
     end,
     keys = {
       {
