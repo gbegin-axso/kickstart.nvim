@@ -218,9 +218,59 @@ return {
           runtimeArgs = { 'tsx', '--env-file=.env', 'src/main.ts' },
           console = 'integratedTerminal',
         },
-        -- ... other TS configs ...
-      }
-
+        {
+          name = 'Debug (watch start:dev)',
+          type = 'pwa-node',
+          request = 'launch',
+          cwd = '${workspaceFolder}',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'tsx', 'watch', '--env-file=.env', 'src/main.ts' },
+          console = 'integratedTerminal',
+        },
+        {
+          name = 'Debug (nest)',
+          type = 'pwa-node',
+          request = 'launch',
+          cwd = '${workspaceFolder}',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'nest', 'start' },
+          console = 'integratedTerminal',
+        },
+        {
+          name = 'Debug (watch nest)',
+          type = 'pwa-node',
+          request = 'launch',
+          cwd = '${workspaceFolder}',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'nest', 'start', '--watch' },
+          console = 'integratedTerminal',
+        },
+        {
+          type = 'pwa-node',
+          request = 'launch',
+          name = 'Launch file',
+          program = '${file}',
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+        },
+        {
+          type = 'pwa-node',
+          request = 'attach',
+          name = 'Attach',
+          processId = require('dap.utils').pick_process,
+          cwd = '${workspaceFolder}',
+          console = 'integratedTerminal',
+        },
+        {
+          name = 'Debug Tests (current file)',
+          type = 'pwa-node',
+          request = 'launch',
+          cwd = '${workspaceFolder}',
+          runtimeExecutable = 'npx',
+          runtimeArgs = { 'jest', '${file}', '--runInBand', '--no-cache', '--watchAll=false' },
+          console = 'integratedTerminal',
+        },
+    }
       dap.configurations.javascript = dap.configurations.typescript
 
       -- Add Go debug adapter configuration for Delve

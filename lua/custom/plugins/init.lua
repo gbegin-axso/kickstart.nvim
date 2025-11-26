@@ -30,6 +30,10 @@ vim.o.clipboard = ''
 
 vim.opt.colorcolumn = '80'
 
+vim.opt.foldenable = false
+vim.opt.foldlevel = 99
+vim.opt.foldmethod = "indent"
+
 require 'custom.plugins.theme'
 require 'custom.plugins.copilot'
 require 'custom.plugins.tpope'
