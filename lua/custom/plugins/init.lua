@@ -46,6 +46,7 @@ require 'custom.plugins.autosave'
 require 'custom.plugins.diffview'
 require 'custom.plugins.test'
 require 'custom.plugins.nvim-treesitter'
+require 'custom.plugins.guess-indent'
 
 -- add custom keys to vim
 
