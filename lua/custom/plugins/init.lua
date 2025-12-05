@@ -34,7 +34,6 @@ vim.opt.foldenable = false
 vim.opt.foldlevel = 99
 vim.opt.foldmethod = 'indent'
 
-vim.opt_local.autoindent = true
 vim.opt_local.smartindent = true
 
 require 'custom.plugins.theme'
