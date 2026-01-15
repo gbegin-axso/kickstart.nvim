@@ -20,7 +20,7 @@ return {
     priority = 1000, -- load early
     config = function()
       require('monokai-pro').setup {
-        filter = 'classic', -- Choose classic flavor
+        filter = 'pro', -- Choose classic flavor
         -- Add additional configuration options if needed
         transparent_background = false,
         terminal_colors = true,
