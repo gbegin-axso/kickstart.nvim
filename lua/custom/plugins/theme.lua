@@ -15,7 +15,7 @@
 
 return {
   {
-    enabled = false,
+    enabled = true,
     'loctvl842/monokai-pro.nvim',
     priority = 1000, -- load early
     config = function()
