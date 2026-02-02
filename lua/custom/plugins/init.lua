@@ -39,7 +39,6 @@ vim.opt.smartindent = false   -- let Treesitter / indentexpr handle it
 vim.opt.cindent     = false   -- only enable in C-like buffers if you really want it
 
 require 'custom.plugins.theme'
-require 'custom.plugins.copilot'
 require 'custom.plugins.tpope'
 require 'custom.plugins.lsp'
 require 'custom.plugins.autosession'
